@@ -1,0 +1,266 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   
+}
+:root{
+    --bgOrange:#e84949;
+}
+#wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+}
+.logo{
+    width: 80px;
+}
+.logo-text{
+    margin: -1.2rem;
+    font-size: 28px;
+
+}
+.nav-items{
+    display: flex;
+    gap: 2rem;
+}
+.nav-items div{
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    
+}
+.nav-items div a{
+    color: black;
+}
+.nav-items div:hover{
+    font-weight: bold;
+    transition:  all 1s;
+}
+.hero-section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    padding-bottom: 8rem;
+}
+.faded-text{
+    user-select: none;
+    font-size: 7rem;
+    color:rgb(231,231,231);
+    bottom: -16%;
+    left: -5%;
+    font-weight: bold;
+    transition: all 3s;
+}
+.hero-section-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+.hero-section-heading{
+    font-size: 35px;
+    color: #343d68;
+    font-weight: 500;
+}
+.role{
+  color: #4524b1;
+  font-weight: 800;
+  
+}
+.hero-section-sub-heading{
+    font-size: 45px;
+    line-height: 45px;
+}
+.hero-section-description{
+    margin-top: 1rem;
+    width: 70%;
+    font-weight: 500;
+}
+.button {
+    background-color: var(--bgOrange);
+    width: fit-content;
+    color: white;
+    padding: 0.8rem 2.3rem;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-weight: 500;
+    border: solid 3px transparent;
+    position: relative;
+    z-index: 1;
+  }
+  .button::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+  }
+  .button:hover::before {
+    transform: scaleX(1);
+  }
+  .button:hover {
+    border: solid 3px var(--bgOrange);
+    color: black;
+  }
+  .hero-section-right{
+    position: relative;
+  }
+ 
+  .user{
+    padding: 2rem;
+    filter: greyscale(1);
+    transition: all 1s;
+    animation: scaleImage 5s linear infinite;
+  }
+  .user img{
+    z-index: -9;
+    width: 320px;
+  }
+  @keyframes scaleImage {
+    0%{
+        filter: grayscale(1);
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+        filter: grayscale(0);
+        box-shadow: 3px 3px 10px black;
+    }
+    100%{
+        transform:scale(1);
+        filter: grayscale(1);
+    }
+
+  }
+  .absolute{
+    position: absolute;
+  }
+  .dots{
+    z-index: 9;
+    bottom: -1rem;
+    right: 0;
+    animation-name: dotanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+  }
+  @keyframes dotanimation {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+  }
+  .cube{
+    z-index: 9;
+    top: 1;
+    right: 0;
+    animation: cubeanimation 2s infinite;
+  }
+  @keyframes cubeanimation {
+    0%{
+        transform: translateY(0px) rotateY(0deg);
+       
+    }
+    50%{
+        transform: translateY(-15px) rotateY(180deg);
+        
+    }
+    100%{
+        transform: translateY(0px) rotateY(360deg);
+        
+    }
+    
+  }
+  .circle{
+    z-index: 9;
+    bottom: 0;
+    left: 0;
+    animation: circleanimation 2s linear infinite;
+  }
+  @keyframes circleanimation {
+    0%{
+        transform:  translateX(0px) translateY(0px);
+        
+    }
+    50%{
+        transform: translateX(10px) translateY(15px);
+        
+
+    }
+    100%{
+        transform:  translateX(0px) translateY(0px);
+        
+    }
+  }
+ .zigzag{
+    z-index: 9;
+    top: 1.9rem;
+    left: -0.3rem;
+    animation: zigzaganimation 5s ease-in infinite;
+ }
+ @keyframes zigzaganimation {
+    0%{
+        left: 0%;
+        top: 0%;
+    }
+    50%{
+        left: 5%;
+        top: 2%;
+    }
+    100%{
+        left: 0%;
+        top: 0%;
+    }
+ }
+ .plus{
+    z-index: 9;
+    top: 0rem;
+    left: 11rem;
+    animation: plusanimation 5s ease-in infinite;
+ }
+ @keyframes plusanimation {
+    50%{
+        top: 3%;
+        left: 48%;
+    }
+ }
+ .faded-text{
+    position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
